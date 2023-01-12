@@ -32,13 +32,13 @@
             <div class="card">
               <div class="card-body">
                 <div class="newsSources d-flex justify-content-center">
-                  <h3 class="">News Sources</h3>
+                  <h3 class="">BREAKING NEWS</h3>
                 </div>
                 <div class="card shadow mt-3" style="background-color: rgb(228, 233, 221);" *ngFor="let realtime of realTimeNews">
-                  <a href="" class="text-success">
+                  <a href="{{realtime.publisher.url}}" class="text-success">
                   <div class="card-header" style="background-color: rgb(20, 14, 58);">
                     <span class="d-block">
-                      <h4><small>{{realtime.source.name}}</small></h4>
+                      <h4><small>{{realtime.publisher.name}}</small></h4>
                     </span>
                   </div>
                   </a>
@@ -49,13 +49,13 @@
                         <p class="media-body pb-3 mb-0 small lh-125">
                           <span class="d-flex justify-content-end text-muted"> 
                           
-                            <small>language: {{realtime.language}}</small></span>
+                            <small>published on: {{realtime.published_date | date}}</small></span>
                           <strong class="d-block ml-3 text-success">
                           </strong>
-                          {{realtime.description}}
+                          {{realtime.title}}
                           
                         </p>
-                        <p class="mb-2 text-muted align-center"><i>news source website: <span class="text-danger"><a href="{{realtime.url}}">{{realtime.url}}</a></span></i></p> 
+                        <p class="mb-2 text-muted align-center"><i>read more: <span class="text-danger"><a href="{{realtime.url}}">{{realtime.url}}</a></span></i></p> 
       
                         
       

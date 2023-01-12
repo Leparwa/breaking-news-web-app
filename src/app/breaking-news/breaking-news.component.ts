@@ -14,7 +14,8 @@ export class BreakingNewsComponent implements OnInit {
 
   ngOnInit(): void {
     this.breakingNews.getRealtimeNews().subscribe((realtimeNews) =>{
-      this.realTimeNews = realtimeNews.articles        
+      this.realTimeNews = realtimeNews.articles   
+      console.log(realtimeNews.articles  )     
     })
   }
 
