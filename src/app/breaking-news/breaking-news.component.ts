@@ -20,6 +20,7 @@ export class BreakingNewsComponent implements OnInit {
 
   // get all headlines
   getAllHeadline(){
+    this.newsCategory = 'All'
     this.breakingNews.getRealtimeNews().subscribe({
       next: (success:IHttpResponse) => {
         this.realTimeNews = success.articles

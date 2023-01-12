@@ -15,7 +15,7 @@
             </button>
             <div class="navbar-collapse collapse justify-content-center" id="main-nav">
                 <ul class="navbar-nav ms-2 align-items-end" style="color: azure;">
-                     <li><a type="button" class="nav-item nav-link active" [ngClass]="{'active': newsCategory ==='All'}" ><small>Home</small></a></li>
+                     <li><a type="button" class="nav-item nav-link active" [ngClass]="{'active': newsCategory ==='All'}" (click)="getAllHeadline()"><small>Home</small></a></li>
                     <li><a type="button" class="nav-item nav-link" [ngClass]="{'active': newsCategory ==='science'}" (click)="getNewsCategory('science')"><small>Science</small></a></li>
                     <li><a type="button" class="nav-item nav-link"  [ngClass]="{'active':newsCategory === 'technology'}" (click)="getNewsCategory('technology')"><small>Technology</small></a></li>
                     <li><a type="button" class="nav-item nav-link"  [ngClass]="{'active':newsCategory === 'sports'}" (click)="getNewsCategory('sports')"><small>Sports</small></a></li>
