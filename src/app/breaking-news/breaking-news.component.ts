@@ -9,6 +9,7 @@ import { BreakingNewsService } from '../services/breaking-news.service';
 })
 export class BreakingNewsComponent implements OnInit {
   realTimeNews:Iheadline[] = [];
+  newsCategory: string = 'All'
   constructor(
     private breakingNews: BreakingNewsService
   ) {}
@@ -31,6 +32,7 @@ export class BreakingNewsComponent implements OnInit {
 
   // get specific category of news
   getNewsCategory(category: string){
+    this.newsCategory = category
     this.breakingNews.getNewsCategory(category).subscribe({
       next: (success:IHttpResponse) => {
         this.realTimeNews = success.articles
