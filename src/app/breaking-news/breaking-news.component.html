@@ -15,10 +15,10 @@
             </button>
             <div class="navbar-collapse collapse justify-content-center" id="main-nav">
                 <ul class="navbar-nav ms-2 align-items-end" style="color: azure;">
-                     <li><a href="/" class="nav-item nav-link active"><small>Home</small></a></li>
-                    <li><a href="#" class="nav-item nav-link"><small>Science</small></a></li>
-                    <li><a href="#" class="nav-item nav-link"><small>Technology</small></a></li>
-                    <li><a href="#" class="nav-item nav-link"><small>Sports</small></a></li>
+                     <li><a type="button" class="nav-item nav-link active"><small>Home</small></a></li>
+                    <li><a type="button" class="nav-item nav-link" (click)="getNewsCategory('science')"><small>Science</small></a></li>
+                    <li><a type="button" class="nav-item nav-link" (click)="getNewsCategory('technology')"><small>Technology</small></a></li>
+                    <li><a type="button" class="nav-item nav-link"><small (click)="getNewsCategory('sports')">Sports</small></a></li>
                 </ul>
             </div>
         </div>
@@ -56,9 +56,6 @@
                           
                         </p>
                         <p class="mb-2 text-muted align-center"><i>read more: <span class="text-danger"><a href="{{realtime.url}}">{{realtime.url}}</a></span></i></p> 
-      
-                        
-      
                       </div>
                      
                   </div>

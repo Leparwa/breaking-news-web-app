@@ -24,7 +24,19 @@ export class BreakingNewsComponent implements OnInit {
         this.realTimeNews = success.articles
       },
       error: (error: IHttpResponse) => {
-        
+    
+      }
+    })
+  }
+
+  // get specific category of news
+  getNewsCategory(category: string){
+    this.breakingNews.getNewsCategory(category).subscribe({
+      next: (success:IHttpResponse) => {
+        this.realTimeNews = success.articles
+      },
+      error: (error: IHttpResponse) => {
+    
       }
     })
   }
