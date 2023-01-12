@@ -11,9 +11,11 @@ baseUrl = environment.baseUrl
 
   // get realtime news 
   getRealtimeNews():Observable<any>{
-    return this.htpp.get(`https://newsapi.org/v2/top-headlines`, {  'headers': {
-      'apiKey': 'ca84965a4f174cf3ae49747b8dac0631',
-    },
+    return this.htpp.get(`https://newsapi.org/v2/top-headlines`, {  
+    'params':{
+      'apiKey':'ca84965a4f174cf3ae49747b8dac0631',
+      'country':'us'
+    }
   })  
   }
 }

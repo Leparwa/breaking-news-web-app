@@ -1,0 +1,7 @@
+.nav-item {
+   color: azure;
+   
+}
+.nav-item.active {
+    color: brown;
+}

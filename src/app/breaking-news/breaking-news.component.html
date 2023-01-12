@@ -1,43 +1,87 @@
-<p>breaking-news works!</p>
-<div class="container-fluid">
-    <div class="row mt-3 d-flex justify-content-center">
-      <div class="col-md-10">
-        <div class="card">
-          <div class="card-body shadow">
-            <div class="newsSources d-flex justify-content-center">
-              <h3 class="">News Sources</h3>
-            </div>
-            <div class="card shadow" style="background-color: rgb(228, 233, 221);" *ngFor="let realtime of realTimeNews">
-              <a href="" class="text-success">
-              <div class="card-header" style="background-color: rgb(20, 14, 58);">
-                <span class="d-block">
-                  <h4><small>{{realtime.name}}</small></h4>
+
+<header>
+    <nav class="navbar navbar-expand-sm fixed-top" style="background-color: rgb(27, 16, 32); color: azure;">
+        <!-- Toggler/collapsibe Button -->
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand">
+                <span style="font-family: cursive; color: rgb(172, 172, 153);">
+                    LEPRINT MEDIA
                 </span>
-              </div>
-              </a>
-              <div class="card-body w-100">
-                 
-                  <div class="w-100">
-                 
-                    <p class="media-body pb-3 mb-0 small lh-125">
-                      <span class="d-flex justify-content-end text-muted"> 
-                      
-                        <small>language: {{realtime.language}}</small></span>
-                      <strong class="d-block ml-3 text-success">
-                      </strong>
-                      {{realtime.description}}
-                      
-                    </p>
-                    
-                    <p class="mb-2 text-muted align-center"><i>news source category: <span class="text-danger">{{realtime.category}}</span></i></p> 
-                    <p class="mb-2 text-muted align-center"><i>news source country: <span class="text-danger">{{realtime.country}}</span></i></p> 
-                    <p class="mb-2 text-muted align-center"><i>news source website: <span class="text-danger"><a href="{{realtime.url}}">{{realtime.url}}</a></span></i></p> 
-  
-                    
-  
-                  </div>
-                 
-              </div>
+            </a>
+            <button class="navbar-toggler ms-auto ms-sm-2" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle Navigation" style="background-color: azure;">
+                <span class="menu-icon-bar"></span>
+                <span class="menu-icon-bar"></span>
+                <span class="menu-icon-bar"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-center" id="main-nav">
+                <ul class="navbar-nav ms-2 align-items-end" style="color: azure;">
+                     <li><a href="/" class="nav-item nav-link active"><small>Home</small></a></li>
+                    <li><a href="#" class="nav-item nav-link"><small>Science</small></a></li>
+                    <li><a href="#" class="nav-item nav-link"><small>Technology</small></a></li>
+                    <li><a href="#" class="nav-item nav-link"><small>Sports</small></a></li>
+                </ul>
             </div>
+        </div>
+    </nav>
+</header>
+<div class="newsMainBlock w-100 h-100 clear-top min-vh-100 mt-5">
+<div class="contentDiv"style=" overflow: auto;">
+    <div class="container-fluid" style="margin-top: 5%;">
+        <div class="row mt-3 d-flex justify-content-center">
+          <div class="col-md-10">
+            <div class="card">
+              <div class="card-body">
+                <div class="newsSources d-flex justify-content-center">
+                  <h3 class="">News Sources</h3>
+                </div>
+                <div class="card shadow mt-3" style="background-color: rgb(228, 233, 221);" *ngFor="let realtime of realTimeNews">
+                  <a href="" class="text-success">
+                  <div class="card-header" style="background-color: rgb(20, 14, 58);">
+                    <span class="d-block">
+                      <h4><small>{{realtime.source.name}}</small></h4>
+                    </span>
+                  </div>
+                  </a>
+                  <div class="card-body w-100">
+                     
+                      <div class="w-100">
+                     
+                        <p class="media-body pb-3 mb-0 small lh-125">
+                          <span class="d-flex justify-content-end text-muted"> 
+                          
+                            <small>language: {{realtime.language}}</small></span>
+                          <strong class="d-block ml-3 text-success">
+                          </strong>
+                          {{realtime.description}}
+                          
+                        </p>
+                        <p class="mb-2 text-muted align-center"><i>news source website: <span class="text-danger"><a href="{{realtime.url}}">{{realtime.url}}</a></span></i></p> 
+      
+                        
+      
+                      </div>
+                     
+                  </div>
+                </div>
+        </div>
+      </div>
     </div>
-  </div>
+    </div>
+    </div>
+</div>
+ </div>
+
+  <footer>
+    <section id="footer">
+        <div class="container">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a> @kevin_leresi</li> <br>
+                        <li><a href="#"><i class="fa fa-envelope"></i></a> kevinleparwa@gmail.com</li>
+                    </ul>
+                </div>
+  	
+        </div>
+    </section>
+
+</footer>
