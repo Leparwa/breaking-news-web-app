@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Iheadline, IHttpResponse } from '../interfaces/iheadline';
 import { BreakingNewsService } from '../services/breaking-news.service';
 
 @Component({
@@ -7,15 +8,24 @@ import { BreakingNewsService } from '../services/breaking-news.service';
   styleUrls: ['./breaking-news.component.css']
 })
 export class BreakingNewsComponent implements OnInit {
-  realTimeNews:any
+  realTimeNews:Iheadline[] = [];
   constructor(
     private breakingNews: BreakingNewsService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.breakingNews.getRealtimeNews().subscribe((realtimeNews) =>{
-      this.realTimeNews = realtimeNews.articles   
-      console.log(realtimeNews.articles  )     
+    this.getAllHeadline()
+  }
+
+  // get all headlines
+  getAllHeadline(){
+    this.breakingNews.getRealtimeNews().subscribe({
+      next: (success:IHttpResponse) => {
+        this.realTimeNews = success.articles
+      },
+      error: (error: IHttpResponse) => {
+        
+      }
     })
   }
 
