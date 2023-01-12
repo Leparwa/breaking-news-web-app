@@ -1,0 +1,43 @@
+<p>breaking-news works!</p>
+<div class="container-fluid">
+    <div class="row mt-3 d-flex justify-content-center">
+      <div class="col-md-10">
+        <div class="card">
+          <div class="card-body shadow">
+            <div class="newsSources d-flex justify-content-center">
+              <h3 class="">News Sources</h3>
+            </div>
+            <div class="card shadow" style="background-color: rgb(228, 233, 221);" *ngFor="let realtime of realTimeNews">
+              <a href="" class="text-success">
+              <div class="card-header" style="background-color: rgb(20, 14, 58);">
+                <span class="d-block">
+                  <h4><small>{{realtime.name}}</small></h4>
+                </span>
+              </div>
+              </a>
+              <div class="card-body w-100">
+                 
+                  <div class="w-100">
+                 
+                    <p class="media-body pb-3 mb-0 small lh-125">
+                      <span class="d-flex justify-content-end text-muted"> 
+                      
+                        <small>language: {{realtime.language}}</small></span>
+                      <strong class="d-block ml-3 text-success">
+                      </strong>
+                      {{realtime.description}}
+                      
+                    </p>
+                    
+                    <p class="mb-2 text-muted align-center"><i>news source category: <span class="text-danger">{{realtime.category}}</span></i></p> 
+                    <p class="mb-2 text-muted align-center"><i>news source country: <span class="text-danger">{{realtime.country}}</span></i></p> 
+                    <p class="mb-2 text-muted align-center"><i>news source website: <span class="text-danger"><a href="{{realtime.url}}">{{realtime.url}}</a></span></i></p> 
+  
+                    
+  
+                  </div>
+                 
+              </div>
+            </div>
+    </div>
+  </div>
